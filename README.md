@@ -37,3 +37,15 @@ destination: subscriber-in
 subscriber-in-0:
 destination: publisher-out
 ```
+**A Supplier is triggered by Spring Cloud Stream by default every second.**
+In cases where the Supplier should be triggered by an external event instead of using a timer, the StreamBridge helper class can be used.
+For example, if a message should be published to the processor when a REST API, sampleCreateAPI , is called, the code could look like the following:
+```java
+    @Autowired
+    private StreamBridge streamBridge;
+    
+    @PostMapping
+    void sampleCreateAPI(@RequestBody String body) {
+        streamBridge.send("subscriber-in-0", body);
+    }
+```
