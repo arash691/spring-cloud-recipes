@@ -1,6 +1,8 @@
-# Spring Cloud Examples
+# Spring Cloud Recipes
 
 ## Table of Contents
+* [Spring Cloud Service Discovery](#spring-cloud-stream-examples)
+    **[Euerka Server](#spring-cloud-eureka-server)
 * [Spring Cloud Stream Examples](#spring-cloud-stream-examples)
 
 
